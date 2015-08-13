@@ -35,10 +35,10 @@ seeder_4='http://seeder4.url/transmission/rpm --auth=user:pass'
 echo "Populating the seeders..."
 
 # Start a loop
-for seed in '$seeder_1 $seeder_2 $seeder_3 $seeder_4'; do
+for seed in "$seeder_1" "$seeder_2" "$seeder_3" "$seeder_4"; do
 	echo 'Updating $seed'
 	transmission-remote $seed -R
-	for tfile in '$desk32tfile $desk64tfile $kde32tfile $kde64tfile $lxde32tfile $lxde64tfile $mate32tfile $mate64tfile $soas32tfile $soas64tfile $xfce32tfile $xfce64tfile'; do
+	for tfile in "$desk32tfile" "$desk64tfile" "$kde32tfile" "$kde64tfile" "$lxde32tfile" "$lxde64tfile" "$mate32tfile" "$mate64tfile" "$soas32tfile" "$soas64tfile" "$xfce32tfile" "$xfce64tfile"; do
 		transmission-remote $seed -a $alt_fed$tfile
 	done
 done
